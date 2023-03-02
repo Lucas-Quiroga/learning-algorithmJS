@@ -35,10 +35,10 @@ So when the guard recites Stands so high, you'll respond S, when the guard recit
 you'll respond H.
 
 Implement the function frontDoorResponse that takes a line of the poem as an argument and returns 
-the first letter of that line.
+the first letter of that line. */
 
 frontDoorResponse('Stands so high');
-// => "S" */
+// => "S"
 
 /**
  * Respond with the correct character, given the line of the
