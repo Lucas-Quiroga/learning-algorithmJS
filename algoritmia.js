@@ -174,3 +174,116 @@ function verificarAbc(string) {
   }
   return true;
 }
+
+/**
+ * Verificar si es par o impar
+ */
+
+function verificarParOimpar(numero) {
+  if (numero % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// refactorizada
+
+function verificarParOimpar(numero) {
+  return numero % 2 === 0;
+}
+
+/**
+ * Calcular el área de un triángulo a partir de su base y altura.
+ */
+
+function calcularAreaTriangulo(base, altura) {
+  let area = (base * altura) / 2;
+  return area;
+}
+
+/**
+ * Pasar de grados Celsius a Fahrenheit.
+ */
+
+function deCelsiusAfahrenheit(gradosC) {
+  let Fahrenheit = (gradosC * 9) / 5 + 32;
+  return Fahrenheit;
+}
+
+/**
+ * Determina si una cadena de texto contiene una subcadena determinada.
+ */
+
+function subCadenaEnCadena(cadena, subcadena) {
+  return cadena.includes(subcadena);
+}
+
+/**
+ * Programa que calcule la suma de los números pares entre 1 y 100.
+ */
+
+function sumaDeDosNumeroPares() {
+  let suma = 0;
+  for (let i = 1; i <= 100; i++) {
+    if (i % 2 === 0) {
+      suma += i;
+    }
+  }
+  return suma;
+}
+
+/**
+ * Función que tome un array de números como argumento y devuelva el número de elementos en el array que son mayores que 10.
+ */
+
+let arrayNum = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+function elementosMayoresA(arrayNum, numero) {
+  let nuevoArray = arrayNum.filter((e) => e > numero);
+  return nuevoArray;
+}
+
+/**
+ * Programa que convierta una cadena de texto en un array de palabras.
+ */
+
+function deStringAarray(string) {
+  let arraySeparado = string.split("");
+  return arraySeparado;
+}
+
+//Si se desea eliminar los espacios en blanco podria ser de la siguiente manera:
+
+function deStringAarray(string) {
+  let arraySeparado = string.trim().split(" ");
+  return arraySeparado;
+}
+
+/**
+ * función que tome dos números como argumentos y devuelva la suma de los dos números. Si los dos números son iguales, la función debe devolver el doble de la suma.
+ */
+
+function sumaODoble(num1, num2) {
+  let suma = num1 + num2;
+  if (num1 === num2) {
+    return suma * 2;
+  }
+  return suma;
+}
+
+/**
+ * función que tome un array de números como argumento y devuelva la suma de los números pares en el array.
+ */
+
+let arrayGeneral = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function sumaDeNumerosPares(array) {
+  let pares = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      pares += array[i];
+    }
+  }
+  return pares;
+}
