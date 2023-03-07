@@ -16,7 +16,7 @@ export const convert = n => {
 	return out
 }
 
-//other solutions
+// other solutions
 export const convert = num => {
 	const factors = {
 		3: 'Pling',
