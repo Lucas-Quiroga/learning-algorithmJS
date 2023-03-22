@@ -1,32 +1,32 @@
-import { notify } from './notifier';
-import { order } from './grocer';
+import { notify } from './notifier'
+import { order } from './grocer'
 
-/** Write a callback function called onSuccess to be called when the 
- * order is successful. It should invoke the imported notify function 
+/** Write a callback function called onSuccess to be called when the
+ * order is successful. It should invoke the imported notify function
  * passing a success message to it. */
 
-onSuccess();
+onSuccess()
 // => `notify` called with `{ message: 'SUCCESS' }`
 
 /**
  * @return void
  */
 export function onSuccess(message) {
-  notify({ message: 'SUCCESS' })
+	notify({ message: 'SUCCESS' })
 }
 
-/** Write a callback function called onError to be called when the 
- * order encounters an error. It should invoke the imported notify 
+/** Write a callback function called onError to be called when the
+ * order encounters an error. It should invoke the imported notify
  * function passing an error message to it. */
 
-onError();
+onError()
 // => `notify` called with `{ message: 'ERROR' }`
 
 /**
  * @return void
  */
 export function onError(message) {
-  notify({ message: 'ERROR' })
+	notify({ message: 'ERROR' })
 }
 
 /** The grocer's API provides a function to order from their inventory 
@@ -40,15 +40,15 @@ export function onError(message) {
 The query takes the form of an object: */
 
 const query = {
-  variety: string,
-  quantity: number,
-};
+	variety: string,
+	quantity: number,
+}
 
 orderFromGrocer(
-  { variety: 'pear', quantity: 12 },
-  exampleSuccessCallback,
-  exampleErrorCallback
-);
+	{ variety: 'pear', quantity: 12 },
+	exampleSuccessCallback,
+	exampleErrorCallback
+)
 // => `order` was called with the query and the callbacks
 
 /**
@@ -58,15 +58,15 @@ orderFromGrocer(
  * @return void
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  order(query, onSuccessCallback, onErrorCallback)
+	order(query, onSuccessCallback, onErrorCallback)
 }
 
-/** You find that you are calling this function from many different places 
- * with the same functions. Seeing an opportunity to refactor your code, 
- * you want to create a function where you can supply the variety and quantity 
+/** You find that you are calling this function from many different places
+ * with the same functions. Seeing an opportunity to refactor your code,
+ * you want to create a function where you can supply the variety and quantity
  * to order as arguments.  */
 
-postOrder('peach', 100);
+postOrder('peach', 100)
 // => order submitted for 100 peaches
 
 /**
@@ -75,5 +75,11 @@ postOrder('peach', 100);
  * @return void
  */
 export function postOrder(variety, quantity) {
-  orderFromGrocer({ variety, quantity }, onSuccess, onError)
+	orderFromGrocer({ variety, quantity }, onSuccess, onError)
+}
+
+export function postOrder(variety, quantity) {
+	const newOrder = { variety, quantity }
+
+	return orderFromGrocer(newOrder, onSuccess, onError)
 }
