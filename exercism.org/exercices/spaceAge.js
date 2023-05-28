@@ -9,7 +9,8 @@
     Uranus: orbital period 84.016846 Earth years
     Neptune: orbital period 164.79132 Earth years
 
-So if you were told someone were 1,000,000,000 seconds old, you should be able to say that they're 31.69 Earth-years old. */
+So if you were told someone were 1,000,000,000 seconds old, you should be able to say 
+that they're 31.69 Earth-years old. */
 
 describe('Space Age', () => {
 	test('age on Earth', () => {
