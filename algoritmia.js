@@ -287,3 +287,59 @@ function sumaDeNumerosPares(array) {
   }
   return pares;
 }
+
+function isTriangle(a, b, c) {
+  if (a + b > c && a + c > b && c + b > a) {
+    return true;
+  }
+}
+
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
+function removeChar(str) {
+  return str.slice(1, -1);
+}
+
+function fakeBin(x) {
+  return x
+    .split("")
+    .map((n) => (n < 5 ? 0 : 1))
+    .join("");
+}
+
+//Cree una función que devuelva la suma de los dos números positivos más bajos dada una matriz de un mínimo de 4 enteros positivos. No se pasarán flotantes ni enteros no positivos.
+
+// For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+function sumTwoSmallestNumbers(numbers) {
+  let arrlow = [];
+  //Code here
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+      arrlow.push(numbers[i]);
+    }
+  }
+  arrlow.sort((a, b) => a - b);
+  return arrlow[0] + arrlow[1];
+}
+
+// Esta vez no hay historia, no hay teoría. Los siguientes ejemplos muestran cómo escribir una función accum:
+
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
+// The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+function accum(s) {
+  // your code
+  const recorrido = s
+    .split("")
+    .map((e, i) => {
+      return e.toUpperCase() + e.toLowerCase().repeat(i);
+    })
+    .join("-");
+  return recorrido;
+}
