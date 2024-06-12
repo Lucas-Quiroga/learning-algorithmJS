@@ -343,3 +343,11 @@ function accum(s) {
     .join("-");
   return recorrido;
 }
+
+// El primer siglo abarca desde el año 1 hasta el año 100 inclusive, el segundo siglo, desde el año 101 hasta el año 200 inclusive, etc.
+
+function century(year) {
+  const siglo = 100;
+
+  return Math.ceil(year / siglo);
+}
